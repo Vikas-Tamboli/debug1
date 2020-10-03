@@ -50,7 +50,7 @@ pipeline{
       steps{
        script{
        sh '''
-            cd file
+            cd infra
             terraform validate
             cd -
        '''
@@ -67,7 +67,7 @@ pipeline{
       steps{
        script{
        sh '''
-            cd file
+            cd infra
             terraform plan
             cd -
        '''
@@ -85,7 +85,7 @@ pipeline{
      steps{
       script{
        sh '''
-            cd file
+            cd infra
             terraform apply --auto-approve
             cd -
        '''
@@ -105,7 +105,7 @@ pipeline{
      steps{
       script{
        sh '''
-            cd file
+            cd infra
             terraform state list
             terraform destroy --auto-approve
             cd - 
