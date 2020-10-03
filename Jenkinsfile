@@ -106,6 +106,7 @@ pipeline{
       script{
        sh '''
             cd infra
+            terraform destroy --auto-approve
             terraform state list
             terraform destroy --auto-approve
             cd - 
